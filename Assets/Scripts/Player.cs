@@ -8,11 +8,11 @@ public class Player : MonoBehaviour
     // its type: int (5, 8, 36, etc.), float (2.5f, 3.7f, etc.)
     // its name: speed, playerSpeed --- Speed, PlayerSpeed
     // optional: give it an initial value
-    private float speed;
+    public float speed;
     private int lives = 3;
     private int score = 0;
-    private float horizontalInput;
-    private float verticalInput;
+    public float horizontalInput;
+    public float verticalInput;
 
     public GameObject bullet;
 
@@ -27,6 +27,14 @@ public class Player : MonoBehaviour
     {
         Movement();
         Shooting();
+        if (transform.position.y >= 1)
+        {
+            transform.position = new Vector3(transform.position.x, 1, 0);
+        }
+        else if (transform.position.y <= -3.8f)
+        {
+            transform.position = new Vector3(transform.position.x, -3.8f, 0);
+        }
     }
 
     void Movement()
