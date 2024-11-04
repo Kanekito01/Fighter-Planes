@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(player, transform.position, Quaternion.identity);
         InvokeRepeating("CreateEnemy", 1f, 3f);
-        InvokeRepeating("CreateEnemy2", 1f, 3f);
+        InvokeRepeating("CreateEnemy2", 2f, 2f);
     }
 
     // Update is called once per frame
